@@ -1,0 +1,13 @@
+com\iftas\methods\AddingEnvironments.class
+com\iftas\methods\BaseClass.class
+com\iftas\methodsTest\LoginTest.class
+com\iftas\methods\Login.class
+com\iftas\methodsTest\AddRoleTest.class
+com\iftas\methodsTest\TestTypesTest.class
+com\iftas\methods\AddingProduct.class
+com\iftas\methods\Technologies.class
+com\iftas\methodsTest\TechnologiesTest.class
+com\iftas\methodsTest\AddingProductTest.class
+com\iftas\methods\AddRole.class
+com\iftas\methods\TestTypes.class
+com\iftas\methodsTest\AddEnvironmentsTest.class
