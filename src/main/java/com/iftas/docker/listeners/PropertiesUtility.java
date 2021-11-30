@@ -2,15 +2,12 @@ package com.iftas.docker.listeners;
 
 import java.io.FileInputStream;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 @SuppressWarnings("all")	
 public class PropertiesUtility {
 	
 	    public static Properties properties;
-	 
      	public static Properties loadProperties(String path) {
-     		
 		Properties properties=new Properties();
 		try (FileInputStream st=new FileInputStream(path)){
 			properties.load(st);
@@ -19,7 +16,6 @@ public class PropertiesUtility {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		return properties;
 	}
 
@@ -33,7 +29,7 @@ public class PropertiesUtility {
 
 		
      public static Properties loadApplicationProperties() {
- 		Properties properties=loadProperties("src\\test\\resources\\application.properties");
+ 		Properties properties=loadProperties("src/test/resources/application.properties");
   		return properties;
     	 
      }

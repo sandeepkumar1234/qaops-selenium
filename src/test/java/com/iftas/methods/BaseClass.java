@@ -35,25 +35,27 @@ public class BaseClass {
 	public void setup() throws InterruptedException, MalformedURLException {
 		
 		
-		  PropertiesUtility.loadApplicationProperties();
-		  
-		  config = new ConfigData();
-		  
-		  driver =Browser.launchBrowser(driver, config.getBrowser(),config.getqaURL());
+		/*
+		 * PropertiesUtility.loadApplicationProperties();
+		 * 
+		 * config = new ConfigData();
+		 * 
+		 * driver =Browser.launchBrowser(driver, config.getBrowser(),config.getqaURL());
+		 */
 		 
 		 
 		
-//		  DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-//		  capabilities.setPlatform(Platform.LINUX);
-//		  PropertiesUtility.loadApplicationProperties();
+		  DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		  capabilities.setPlatform(Platform.LINUX);
+		  PropertiesUtility.loadApplicationProperties();
 		  //PropertiesUtility.writeByte(PropertiesUtility.properties.getProperty("fileContent")); 
 		  // excel = new ExcelDataProvider(); 
-		  // config = new ConfigDataProvider(); 
-//		  driver = new RemoteWebDriver(new URL(PropertiesUtility.properties.getProperty("environment.url")),capabilities);
-//		  System.out.println("driver loaded.................ra worst");
-//		  
-//		  System.out.println(driver);
-//		  driver.navigate().to(PropertiesUtility.properties.getProperty("application.url"));
+		   //config = new ConfigDataProvider(); 
+		  driver = new RemoteWebDriver(new URL(PropertiesUtility.properties.getProperty("environment.url")),capabilities);
+		  System.out.println("driver loaded.................ra worst");
+		  
+		  System.out.println(driver);
+		  driver.navigate().to(PropertiesUtility.properties.getProperty("application.url"));
 		 	
 	}
 	

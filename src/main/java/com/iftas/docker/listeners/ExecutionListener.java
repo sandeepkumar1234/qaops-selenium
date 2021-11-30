@@ -1,30 +1,32 @@
-					
 package com.iftas.docker.listeners;
 
 import java.time.LocalDateTime;
-
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import com.gargoylesoftware.htmlunit.WebConsole.Logger;
+
 
 public class ExecutionListener implements ITestListener {
-
+	
 	private TestStatus testStatus;
 	private LocalDateTime startTime;
 	private LocalDateTime endTime;
 	private Long sTime;
 	private Long eTime;
 	private String result;
+	
 
 	public void onTestStart(ITestResult iTestResult) {
 		this.testStatus = new TestStatus();
 	}
-					
+
 	public void onTestSuccess(ITestResult iTestResult) {
 		this.sendStatus(iTestResult, "PASS");
 		this.result = "PASSED";
 	}
 
+	
 	public void onTestFailure(ITestResult iTestResult) {
 		this.sendStatus(iTestResult, "FAIL");
 	}
@@ -62,8 +64,7 @@ public class ExecutionListener implements ITestListener {
 		this.testStatus.setExecutionDate(LocalDateTime.now().toString());
 		this.testStatus.setEndTime(eTime + "");
 		this.testStatus.setStartTime(sTime + "");
-		if(status.equalsIgnoreCase("PASS")){		 	
-			
+		if(status.equalsIgnoreCase("PASS")){
 			this.testStatus.setResult("PASS");
 
 		}else if(status.equalsIgnoreCase("SKIPPED")) {
@@ -75,6 +76,8 @@ public class ExecutionListener implements ITestListener {
 		long el = eTime - sTime;
 		this.testStatus.setDuration(el + "");
 		this.testStatus.setTestPlanId(PropertiesUtility.properties.getProperty("test.planId"));
+
+		this.testStatus.setTestPlanName(PropertiesUtility.properties.getProperty("test.planName"));
 		ResultSender.send(this.testStatus);
 	}
 
