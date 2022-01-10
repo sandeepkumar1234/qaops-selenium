@@ -8,8 +8,8 @@ ADD  target/seleniumdocker-tests.jar seleniumdocker-tests.jar
 ADD  target/libs libs
 # Add the suite xmls
 ADD testng.xml testng.xml
-RUN export http_proxy=http://172.16.102.152:8080
-RUN export https_proxy=http://172.16.102.152:8080
+#RUN export http_proxy=http://172.16.102.152:8080
+#RUN export https_proxy=http://172.16.102.152:8080
 
 COPY src/test/resources/application.properties src/test/resources/application.properties
 
