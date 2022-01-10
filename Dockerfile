@@ -12,6 +12,7 @@ ADD testng.xml testng.xml
 #RUN export https_proxy=http://172.16.102.152:8080
 
 COPY src/test/resources/application.properties src/test/resources/application.properties
+COPY Screenshots Screenshots
 
 #ADD  application.properties
 # Command line to execute the test
