@@ -42,7 +42,7 @@ public class Technologies {
 	    	  Thread.sleep(3000);
 	    	  System.out.println(names);
 	    	
-	    	  if(names.contains("Selenium")) {
+	    	  if(names.contains("selenium")) {
 	    		  
 	    		  driver.findElement(By.xpath("//*[@id='react-tabs-3']/div/div[2]/div["+i+"]/div/div[2]/button")).click();
 	    		  Thread.sleep(5000);
@@ -73,7 +73,7 @@ public class Technologies {
 	    	  Thread.sleep(3000);
 	    	  System.out.println(names);
 	    	
-	    	  if(names.contains("Selenium")) {
+	    	  if(names.contains("selenium")) {
 	    		  
 	    		  driver.findElement(By.xpath("//*[@id='react-tabs-3']/div/div[2]/div["+i+"]/div/div[2]/button")).click();
 	    		  Thread.sleep(5000);
