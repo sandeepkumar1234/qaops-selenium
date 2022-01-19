@@ -47,8 +47,14 @@ public class AddingProductTest extends BaseClass{
 		addenv.createExecution();
 
 	}
-	
 	@Test(priority=6)
+	public void ScheduledCreateExe() throws Exception {
+		AddingProduct addenv=PageFactory.initElements(driver, AddingProduct.class);
+		addenv.ScheduledcreateExecution();
+		
+	}
+	
+	@Test(priority=7)
 	public void logout() throws InterruptedException {
 		
 		Login login=PageFactory.initElements(driver, Login.class);
