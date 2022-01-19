@@ -103,7 +103,7 @@ public class AddingProduct {
 		   envDescription.sendKeys(PropertiesUtility.properties.getProperty("PEDescription"));
 		   Thread.sleep(2000);
 		   Select objSelect =new Select(driver.findElement(By.xpath("//select[@class='np-dd dropdown']")));
-		   objSelect.selectByVisibleText("Develop...");
+		   objSelect.selectByVisibleText("dev");
 		   EnvURL.sendKeys(PropertiesUtility.properties.getProperty("PEUrl"));
 		   Thread.sleep(2000);
 		   SubmitBtn.click();
@@ -141,7 +141,7 @@ public class AddingProduct {
 			Thread.sleep(2000);
 			Select se=new Select(select);
 			
-			se.selectByVisibleText("Selenium");
+			se.selectByVisibleText("selenium");
 			
 			Thread.sleep(2000);
 			
@@ -173,7 +173,7 @@ public class AddingProduct {
 		    
 		    Select sele=new Select(EnvName);
 		    
-		    sele.selectByVisibleText("Development");
+		    sele.selectByVisibleText("dev");
 		    Thread.sleep(3000);
 		    
 		    WebElement EnvUrl= driver.findElement(By.xpath("//div[@class='mb-2 col-6 form-box']/label[contains(text(),'Environment Url')]/..//select[@class='ats-dd dropdown']"));
@@ -183,6 +183,40 @@ public class AddingProduct {
 		    Thread.sleep(3000);
 		    
 		    SubmitBtn.click();
+	   }
+	  public void ScheduledcreateExecution() throws InterruptedException {
+		   Thread.sleep(2000);
+		   exeBtn.click();
+		    Thread.sleep(2000);
+		    
+		    exeName.sendKeys(PropertiesUtility.properties.getProperty("ExeName1"));
+		   
+		    WebElement EnvName= driver.findElement(By.xpath("//div[@class='mb-2 col-6 form-box']/label[contains(text(),'Environment Name')]/..//select[@class='ats-dd dropdown']"));
+		    
+		    Select sele=new Select(EnvName);
+		    
+		    sele.selectByVisibleText("dev");
+		    Thread.sleep(3000);
+		    
+		    WebElement EnvUrl= driver.findElement(By.xpath("//div[@class='mb-2 col-6 form-box']/label[contains(text(),'Environment Url')]/..//select[@class='ats-dd dropdown']"));
+		    
+		    Select select=new Select(EnvUrl);
+		    select.selectByVisibleText("http://www.javatpoint.com");
+		    Thread.sleep(3000);
+		    driver.findElement(By.xpath("//span[contains(text(),'Schedule Test')]")).click();
+			
+			driver.findElement(By.xpath("//input[@placeholder='Select a Date']")).click();
+			
+			driver.findElement(By.xpath("//div[contains(text(),'17')]")).click();
+			
+			WebElement dropdown3=driver.findElement(By.xpath("(//select[@class='ats-dd dropdown'])[3]"));
+			
+			Select select3=new Select(dropdown3);
+			
+			select3.selectByIndex(3);
+			
+			//driver.findElement(By.xpath("//button[contains(text(),'Schedule')]")).click();
+		    
 	   }
 	   
 	   
